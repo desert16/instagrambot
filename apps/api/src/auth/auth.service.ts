@@ -150,12 +150,12 @@ export class AuthService {
 
     const accessToken = this.jwtService.sign(payload, {
       secret: config.JWT_SECRET,
-      expiresIn: config.JWT_EXPIRES_IN,
+      expiresIn: config.JWT_EXPIRES_IN as any,
     });
 
     const refreshToken = this.jwtService.sign(payload, {
       secret: config.JWT_REFRESH_SECRET,
-      expiresIn: config.JWT_REFRESH_EXPIRES_IN,
+      expiresIn: config.JWT_REFRESH_EXPIRES_IN as any,
     });
 
     return { accessToken, refreshToken };

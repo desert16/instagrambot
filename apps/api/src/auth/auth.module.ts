@@ -12,7 +12,7 @@ import { config } from '@instagrambot/config';
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
       secret: config.JWT_SECRET,
-      signOptions: { expiresIn: config.JWT_EXPIRES_IN },
+      signOptions: { expiresIn: config.JWT_EXPIRES_IN as any },
     }),
   ],
   controllers: [AuthController],
