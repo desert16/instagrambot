@@ -81,10 +81,7 @@ docker compose exec -T api npx prisma db push --schema=packages/database/prisma/
 
 # Seed default admin user and sample data
 echo -e "${BLUE}Seed çalıştırılıyor...${NC}"
-docker compose exec -T api node -e "
-  const { PrismaClient } = require('./packages/database/dist/index.js');
-  console.log('Database connection verified');
-" || true
+docker compose exec -T api node packages/database/src/seed.js || true
 
 echo -e "\n${YELLOW}[7/7] Servis Sağlık Durumu Kontrol Ediliyor...${NC}"
 sleep 5
