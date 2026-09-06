@@ -1,0 +1,20 @@
+{
+  "name": "@instagrambot/ai",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@google/genai": "^0.1.1",
+    "@instagrambot/config": "*",
+    "@instagrambot/types": "*",
+    "openai": "^4.85.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  }
+}

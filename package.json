@@ -1,0 +1,32 @@
+{
+  "name": "instagrambot-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-ready Multi-tenant Instagram AI Bot SaaS Platform",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run --workspace=apps/api dev",
+    "dev:web": "npm run --workspace=apps/web dev",
+    "build": "npm run build:packages && npm run build:apps",
+    "build:packages": "npm run --workspace=packages/types build && npm run --workspace=packages/config build && npm run --workspace=packages/database build && npm run --workspace=packages/meta build && npm run --workspace=packages/ai build",
+    "build:apps": "npm run --workspace=apps/api build && npm run --workspace=apps/web build",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "npm run --workspace=apps/api test",
+    "db:generate": "npm run --workspace=packages/database generate",
+    "db:migrate": "npm run --workspace=packages/database migrate",
+    "db:push": "npm run --workspace=packages/database push",
+    "db:seed": "npm run --workspace=packages/database seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

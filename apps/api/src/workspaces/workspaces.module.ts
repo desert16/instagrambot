@@ -1,0 +1,11 @@
+import { Module } from '@nestjs/common';
+import { WorkspacesService } from './workspaces.service.js';
+import { WorkspacesController } from './workspaces.controller.js';
+import { PrismaService } from '../common/prisma.service.js';
+
+@Module({
+  controllers: [WorkspacesController],
+  providers: [WorkspacesService, PrismaService],
+  exports: [WorkspacesService],
+})
+export class WorkspacesModule {}

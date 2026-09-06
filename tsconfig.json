@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@instagrambot/database": ["packages/database/src/index.ts"],
+      "@instagrambot/database/*": ["packages/database/src/*"],
+      "@instagrambot/meta": ["packages/meta/src/index.ts"],
+      "@instagrambot/meta/*": ["packages/meta/src/*"],
+      "@instagrambot/ai": ["packages/ai/src/index.ts"],
+      "@instagrambot/ai/*": ["packages/ai/src/*"],
+      "@instagrambot/types": ["packages/types/src/index.ts"],
+      "@instagrambot/types/*": ["packages/types/src/*"],
+      "@instagrambot/config": ["packages/config/src/index.ts"],
+      "@instagrambot/config/*": ["packages/config/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", ".next", "postgres_data", "redis_data"]
+}
